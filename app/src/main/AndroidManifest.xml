@@ -20,6 +20,7 @@
         <service android:name=".services.BookService"/>
         <service android:name=".services.MovieService"/>
         <service android:name=".services.MusicService"/>
+        <service android:name=".services.StartAndBindService"/>
     </application>
 
 </manifest>

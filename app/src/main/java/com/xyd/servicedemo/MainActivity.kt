@@ -7,10 +7,7 @@ import android.content.ServiceConnection
 import android.os.*
 import android.support.v7.app.AppCompatActivity
 import com.blankj.utilcode.util.LogUtils
-import com.xyd.servicedemo.services.BookService
-import com.xyd.servicedemo.services.MovieService
-import com.xyd.servicedemo.services.MusicService
-import com.xyd.servicedemo.services.SEND_MESSAGE_CODE
+import com.xyd.servicedemo.services.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -78,6 +75,8 @@ class MainActivity : AppCompatActivity(),ServiceConnection{
 
     private var bookbinders = Intent()
     private var movieBinders = Intent()
+    private var sbStart = Intent()
+    private var sbBind = Intent()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -124,6 +123,23 @@ class MainActivity : AppCompatActivity(),ServiceConnection{
         btn_msg_unbind.setOnClickListener {
             unbindService(conn)
         }
+
+        //先启动service
+        btn_sb_start.setOnClickListener {
+            sbStart.setClass(this@MainActivity,StartAndBindService::class.java)
+            startService(sbStart)
+        }
+        btn_sb_stop.setOnClickListener {
+            stopService(sbStart)
+        }
+        //再绑定service
+        btn_sb_bind.setOnClickListener {
+            bindService(Intent(this@MainActivity,StartAndBindService::class.java),conn,Service.BIND_AUTO_CREATE)
+        }
+        btn_sb_unbind.setOnClickListener {
+            unbindService(conn)
+        }
+
     }
 
 

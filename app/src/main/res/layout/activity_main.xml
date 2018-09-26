@@ -108,4 +108,57 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.46"
         app:layout_constraintStart_toEndOf="@+id/btn_msg_bind" />
+
+    <Button
+        android:id="@+id/btn_sb_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:text="启动service"
+        app:layout_constraintBottom_toTopOf="@+id/btn_msg_unbind"
+        app:layout_constraintEnd_toEndOf="@+id/btn_msg_unbind"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btn_msg_unbind" />
+
+    <Button
+        android:id="@+id/btn_sb_bind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:text="绑定service"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_sb_start"
+        app:layout_constraintStart_toEndOf="@+id/btn_sb_start" />
+
+    <Button
+        android:id="@+id/btn_sb_stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:text="停止service"
+        app:layout_constraintBottom_toTopOf="@+id/btn_sb_start"
+        app:layout_constraintEnd_toStartOf="@+id/btn_sb_bind"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/btn_sb_start" />
+
+    <Button
+        android:id="@+id/btn_sb_unbind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:text="取消绑定"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_sb_stop"
+        app:layout_constraintEnd_toEndOf="@+id/btn_sb_bind"
+        app:layout_constraintStart_toStartOf="@+id/btn_sb_bind" />
 </android.support.constraint.ConstraintLayout>
